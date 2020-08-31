@@ -1,0 +1,24 @@
+.page-content{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    .slot{
+        padding: 20px;   
+        border-right: 2px solid black;
+    
+        .title{
+            font-weight: bold;
+            margin: 10px 0px;
+            font-size: 25px;
+        }
+    }
+    
+    .slot:hover{
+        cursor: pointer;
+    }
+
+    .no-border-rght{
+        border-right: 0px !important;
+    }
+}

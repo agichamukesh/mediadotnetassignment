@@ -1,0 +1,65 @@
+<div class="page-content">
+    <div class="panel panel-default">
+            <div class="panel-heading">
+            <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+            <div class="row">
+                <div [hidden]="!apierror" class="alert alert-danger" role="alert">
+                {{errorMessage}}
+                </div>
+                <div class="col-md-6 slot" (click)="addClick(slot1._id)">
+                    <span *ngIf="slot1.name">
+                        <div class="title">
+                             Slot 1
+                        </div>
+                        Name : {{slot1.name}}
+                        Cost : {{slot1.cost}}
+                        Clicks : {{slot1.clicks}}
+                    </span>
+                    <span *ngIf="!slot1.name">
+                        <div class="title">
+                            No Add To Display
+                        </div>
+                    </span>
+                </div>
+                <div class="col-md-6 slot no-border-rght" (click)="addClick(slot2._id)">
+                    <span *ngIf="slot2.name">
+                        <div class="title">
+                             Slot 2
+                        </div>
+                        Name : {{slot2.name}}
+                        Cost : {{slot2.cost}}
+                        Clicks : {{slot2.clicks}}
+                    </span>
+                    <span *ngIf="!slot2.name">
+                        <div class="title">
+                            No Add To Display
+                        </div>
+                    </span>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Update Ad Costs</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-4" *ngFor="let ad of allAds">
+                    <div class="form-group">
+                    <label for="nameText" class="control-label">{{ad.name}} -  cost : {{ad.cost}} , clicks : {{ad.clicks}} </label>
+                        <div class="input-group">
+                            <input id="ad_{{ad._id}}" value="{{ad.cost}}" type="text" class="form-control">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-primary" (click)="updateCost(ad._id)">
+                                Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+</div>
